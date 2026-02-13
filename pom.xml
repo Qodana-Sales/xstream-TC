@@ -988,6 +988,13 @@
         <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
+          <configuration>
+            <outputDirectory>${project.basedir}/.qodana/code-coverage/</outputDirectory>
+              <formats>XML</formats>
+                <includes>
+                  <include>org/example/**</include>
+                </includes>
+          </configuration>
           <version>${version.plugin.jacoco}</version>
         </plugin>
       </plugins>
