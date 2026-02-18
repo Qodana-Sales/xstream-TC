@@ -1,3 +1,9 @@
 version: "1.0"
 profile:
   name: qodana.recommended
+
+bootstrap: |
+  mvn clean test jacoco:report -Pcoveralls
+  mkdir -p .qodana/code-coverage
+  mv xstream/target/site/jacoco/index.xml .qodana/code-coverage
+  
